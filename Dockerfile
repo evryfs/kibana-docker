@@ -1,4 +1,4 @@
-FROM kibana:5.0.0
+FROM kibana:5.0.1
 MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
 
 RUN 	kibana-plugin install x-pack && \
