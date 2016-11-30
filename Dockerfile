@@ -1,10 +1,12 @@
-FROM kibana:5.0.1
+FROM docker.elastic.co/kibana/kibana:5.0.2
 MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
 
-RUN 	kibana-plugin install x-pack && \
-	echo "xpack.security.enabled: false"	>> /etc/kibana/kibana.yml && \
-	echo "xpack.graph.enabled: false" 	>> /etc/kibana/kibana.yml && \
-	echo "xpack.watcher.enabled: false"	>> /etc/kibana/kibana.yml && \
-	echo "xpack.reporting.enabled: false" 	>> /etc/kibana/kibana.yml && \
-	chown -R root:root /usr/share/kibana /etc/kibana && \
+USER root
+RUN 	\
+	echo "xpack.security.enabled: false"	>> /usr/share/kibana/config/kibana.yml && \
+	echo "xpack.graph.enabled: false" 	>> /usr/share/kibana/config/kibana.yml && \
+	echo "xpack.watcher.enabled: false"	>> /usr/share/kibana/config/kibana.yml && \
+	echo "xpack.reporting.enabled: false" 	>> /usr/share/kibana/config/kibana.yml && \
+	chown -R root:root /usr/share/kibana && \
 	chmod -R a+rw /usr/share/kibana/optimize
+USER kibana
