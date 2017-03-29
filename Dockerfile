@@ -10,5 +10,9 @@ RUN 	\
 	chown -R kibana:kibana /usr/share/kibana
 USER kibana
 #https://github.com/elastic/kibana/issues/6057
+
+RUN kibana-plugin install https://github.com/sirensolutions/sentinl/releases/download/snapshot/sentinl-latest.tar.gz
+#RUN kibana-plugin install https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/5251/artifacts/file/build/elastalert-0.0.6.zip
+
 RUN kibana  2>&1 | grep -m 1 "Optimization of .* complete in .* seconds" 
 
