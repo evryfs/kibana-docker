@@ -1,4 +1,4 @@
-FROM docker.elastic.co/kibana/kibana:5.3.2
+FROM docker.elastic.co/kibana/kibana:5.4.0
 MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
 
 USER root
