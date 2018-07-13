@@ -1,5 +1,5 @@
-FROM docker.elastic.co/kibana/kibana:6.2.4
-MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
+FROM docker.elastic.co/kibana/kibana:6.3.1
+label maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 
 USER root
 RUN 	\
@@ -13,4 +13,3 @@ USER kibana
 
 RUN kibana-plugin install https://github.com/sirensolutions/sentinl/releases/download/snapshot/sentinl-latest.tar.gz
 RUN kibana  2>&1 | grep -m 1 "Optimization of .* complete in .* seconds" 
-
