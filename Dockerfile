@@ -7,7 +7,7 @@ RUN 	\
 	echo "xpack.graph.enabled: false" 	>> /usr/share/kibana/config/kibana.yml && \
 	echo "xpack.watcher.enabled: false"	>> /usr/share/kibana/config/kibana.yml && \
 	echo "xpack.reporting.enabled: false" 	>> /usr/share/kibana/config/kibana.yml && \
-	echo "elastalert.serverHost: elastalert" >> /usr/share/kibana/config/kibana.yml && \
+	echo "elastalert-kibana-plugin.serverHost: elastalert" >> /usr/share/kibana/config/kibana.yml && \
 	chown -R kibana:kibana /usr/share/kibana
 USER kibana
 #RUN ./bin/kibana-plugin install 'https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/artifacts/6.2.4/raw/artifact/elastalert-kibana-plugin-latest.zip?job=build'
