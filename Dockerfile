@@ -1,5 +1,7 @@
 FROM docker.elastic.co/kibana/kibana:6.4.1
 label maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
+ARG ELASTALERT_PLUGIN_VERSION=1.0.0
+ARG KIBANA_VERSION=6.4.1
 
 USER root
 RUN 	\
@@ -11,6 +13,6 @@ RUN 	\
 	chown -R kibana:kibana /usr/share/kibana
 USER kibana
 #RUN ./bin/kibana-plugin install 'https://git.bitsensor.io/front-end/elastalert-kibana-plugin/builds/artifacts/6.2.4/raw/artifact/elastalert-kibana-plugin-latest.zip?job=build'
-RUN ./bin/kibana-plugin install https://github.com/bitsensor/elastalert-kibana-plugin/releases/download/1.0.0-alpha.2/elastalert-kibana-plugin-1.0.0-alpha.2-6.4.0.zip
+RUN ./bin/kibana-plugin install https://github.com/bitsensor/elastalert-kibana-plugin/releases/download/${ELASTALERT_PLUGIN_VERSION}/elastalert-kibana-plugin-${ELASTALERT_PLUGIN_VERSION}-${KIBANA_VERSION}.zip
 #https://github.com/elastic/kibana/issues/6057
-#RUN kibana  2>&1 | grep -m 1 "Optimization of .* complete in .* seconds" 
+#RUN kibana  2>&1 | grep -m 1 "Optimization of .* complete in .* seconds"
