@@ -1,7 +1,7 @@
-FROM docker.elastic.co/kibana/kibana:6.5.3
+FROM docker.elastic.co/kibana/kibana:6.6.0
 label maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ARG ELASTALERT_PLUGIN_VERSION=1.0.1
-ARG KIBANA_VERSION=6.5.3
+ARG ELASTALERT_PLUGIN_VERSION=1.0.2
+ARG KIBANA_VERSION=6.6.0
 
 USER root
 RUN 	\
