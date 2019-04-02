@@ -10,4 +10,4 @@ RUN 	\
 	chown -R kibana:kibana /usr/share/kibana
 USER kibana
 #https://github.com/elastic/kibana/issues/6057
-RUN kibana  2>&1 | grep -m 1 "Optimization of .* complete in .* seconds" 
+#RUN kibana  2>&1 | grep -m 1 "Optimization of .* complete in .* seconds" 
