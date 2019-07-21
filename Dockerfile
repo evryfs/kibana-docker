@@ -1,7 +1,7 @@
 FROM docker.elastic.co/kibana/kibana:7.2.0
 label maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ARG ELASTALERT_PLUGIN_VERSION=1.0.4
-ARG KIBANA_VERSION=7.1.1
+ARG ELASTALERT_PLUGIN_VERSION=1.1.0
+ARG KIBANA_VERSION=7.2.0
 
 USER root
 RUN 	\
