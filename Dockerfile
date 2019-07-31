@@ -1,4 +1,4 @@
-FROM docker.elastic.co/kibana/kibana:7.2.1
+FROM docker.elastic.co/kibana/kibana:7.3.0
 label maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 
 USER root
